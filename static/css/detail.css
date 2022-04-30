@@ -1,0 +1,58 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+textarea {
+    resize: none;
+}
+
+h1, h2, h3, h4 {
+    margin: 0;
+}
+
+nav {
+    padding: 0px 20px 0px 15px;
+}
+
+nav ul li {
+    padding: 0;
+}
+
+nav ul.etc li i {
+    font-size: 25px;
+}
+
+i#back_btn {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+main.container {
+    height: 80%;
+}
+
+span#number {
+    display: none;
+}
+
+div.secret-memo {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+div.secret-memo input[type='password'] {
+    width: 40%;
+    margin: 0px 0px 0px 10px;
+}
+
+div.edit-item {
+    display: none;
+}
+
+div#edit-btn {
+    float: right;
+}

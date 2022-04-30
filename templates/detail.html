@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko" id="html" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- load smooth -->
+    <META HTTP-EQUIV="Page-Enter" CONTENT="BlendTrans(Duration=1)"> 
+    <META HTTP-EQUIV="Page-exit" CONTENT="BlendTrans(Duration=1)"> 
+
+    <!-- pico css -->
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"><link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+
+    <!-- bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+    <!-- tippy js using tooltip -->
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../static/css/detail.css">
+
+    <!-- js -->
+    <script src="../static/js/Modal.js"></script>
+    <script src="../static/js/CheckSecret.js"></script>
+    <script src="../static/js/CheckLocked.js"></script>
+    <script src="../static/js/Edit.js"></script>
+    <script src="../static/js/tooltip.js"></script>
+    <title>메모</title>
+    <script>
+        $(document).ready(function() {
+            var theme = localStorage.getItem('theme');
+            var html = document.getElementById('html');
+
+            html.setAttribute('data-theme', theme);
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            if ('{{rows[0]["locked"]}}' == 'T') {
+                $('#secret-check').attr('checked', true);
+                $('#memo-pw').attr('disabled', false);
+                $('#memo-pw').val('{{rows[0]["password"]}}');
+            }
+        })
+    </script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li onclick="window.location.href = '/'"><h1><i class="bi bi-arrow-left-short" id="back_btn"></i></h1></li>
+        </ul>
+        <ul>
+            <li><h4>상세화면</h4></li>
+        </ul>
+        <ul class="etc">
+            <li onclick="OpenEdit()" id="edit_active_btn">
+                <i class="bi bi-pencil-fill"></i>
+            </li>
+            <li onclick="OpenDeleteModal()" style="margin-left: 20px;" id="delete_active_btn">
+                <i class="bi bi-trash-fill"></i>
+            </li>
+        </ul>
+    </nav>
+    <main class="container">
+        <div class="edit-item">
+            <div class="secret-memo">
+                <label>
+                    <input type="checkbox" id="secret-check" onclick="CheckSecret()">
+                    비밀 메모
+                </label>
+                <input type="password" maxlength="4" placeholder="****" id="memo-pw" name="memo-pw" disabled>
+            </div>
+        </div>
+        {% for row in rows %}
+        <span id="number">{{row['number']}}</span>
+            <textarea name="content" id="content" cols="30" rows="10" readonly>{{row["content"]}}</textarea>
+        {% endfor %}
+        <span>수정일: {{rows[0]['created']}}</span>
+        <div class="edit-item" id="edit-btn">
+            <a href="#" role="button" class="secondary" onclick="CloseEdit()">취소</a>
+            <a href="" onclick="Edit()" role="button" id="edit_btn">수정하기</a>
+        </div>
+    </main>
+
+    <!-- Delete Modal -->
+    <dialog id="delete-memo" open="false">
+        <article>
+            <header>
+                <a aria-label="Close" class="close" onclick="CloseDeleteModal()"></a>
+                <h4>삭제</h4>
+            </header>
+            <p style="padding: 0px 200px;">정말 삭제하시겠습니까?</p>
+            <footer>
+                <a href="#" role="button" class="secondary outline" onclick="CloseDeleteModal()">취소</a>
+                <a href="" id="delete_btn" role="button" style="background-color: #e53935;">삭제</a>
+            </footer>
+        </article>
+    </dialog>
+</body>
+</html>
