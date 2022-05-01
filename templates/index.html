@@ -44,6 +44,7 @@
     <script src="../static/js/CountMemoLength.js"></script>
     <script src="../static/js/Search.js"></script>
     <script src="../static/js/GoDetail.js"></script>
+    <script src="../static/js/NoBack.js"></script>
     <title>REMEMO</title>
     <script>
         $(document).ready(function() {
@@ -65,7 +66,7 @@
     </script>
 </head>
 
-<body>
+<body onload="noBack();" onpageshow="if(event.persisted) noBack();" onunload="">
     <nav>
         <ul>
             <li><h3><a href="/" id="logo">REMEMO</a></h3></li>

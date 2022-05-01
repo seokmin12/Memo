@@ -34,6 +34,7 @@
     <script src="../static/js/CheckLocked.js"></script>
     <script src="../static/js/Edit.js"></script>
     <script src="../static/js/tooltip.js"></script>
+    <script src="../static/js/NoBack.js"></script>
     <title>REMEMO</title>
     <script>
         $(document).ready(function() {
@@ -53,7 +54,7 @@
         })
     </script>
 </head>
-<body>
+<body onload="noBack();" onpageshow="if(event.persisted) noBack();" onunload="">
     <nav>
         <ul>
             <li onclick="window.location.href = '/'"><h1><i class="bi bi-arrow-left-short" id="back_btn"></i></h1></li>
