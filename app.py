@@ -42,11 +42,11 @@ def write_memo():
     return redirect(url_for('home'))
 
 
-@app.route('/delete_memo')
+@app.route('/delete_memo', methods=["GET"])
 def delete_memo():
     try:
         number = request.args.get('number')
-
+        
         with sql.connect('database.db') as con:
             cur = con.cursor()
             cur.execute(f"DELETE FROM note WHERE number = {number}")
@@ -87,7 +87,6 @@ def check_pw():
         rows = cur.fetchall()
         for row in rows:
             password = row["password"]
-            print(password)
         if password == pw:
             return redirect(url_for('memo_detail', number=number))
         else:
@@ -116,4 +115,4 @@ def update_memo():
 
 
 if __name__ == '__main__':
-    app.run(port='5001', debug=True)
+    app.run(host='0.0.0.0', port='5001', debug=True)

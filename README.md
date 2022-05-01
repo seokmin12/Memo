@@ -37,10 +37,10 @@
 * * *
 |이름|이미지|
 |--|--|
-|메인 페이지 (라이트)|<img src="img/main-light.png">|
-|메인 페이지 (다크)|<img src="img/main-dark.png">|
-|메모 작성|<img src="img/write-memo.png">|
-|잠긴 메모|<img src="img/locked-memo.png">|
-|상세 화면|<img src="img/detail.png">|
-|수정|<img src="img/edit.png">|
-|삭제|<img src="img/delete.png">|
+|메인 페이지 (라이트)|<img src="static/img/main-light.png">|
+|메인 페이지 (다크)|<img src="static/img/main-dark.png">|
+|메모 작성|<img src="static/img/write-memo.png">|
+|잠긴 메모|<img src="static/img/locked-memo.png">|
+|상세 화면|<img src="static/img/detail.png">|
+|수정|<img src="static/img/edit.png">|
+|삭제|<img src="static/img/delete.png">|

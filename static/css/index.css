@@ -20,6 +20,10 @@ nav {
     padding: 0px 15px 0px 15px;
 }
 
+a#logo {
+    font-family: 'Permanent Marker', cursive;
+}
+
 div.footer {
     width: 100%;
     position: fixed;
