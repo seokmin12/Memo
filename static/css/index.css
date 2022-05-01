@@ -133,7 +133,7 @@ div.title {
     word-wrap:break-word; 
 }
 
-span#memo-count {
+div.count {
     position: fixed;
     bottom: 20px;
 }

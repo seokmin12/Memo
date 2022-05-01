@@ -103,11 +103,11 @@
                 </article>
             {% endfor %}
         </div>
+        <div class="count">
+            <span id="memo-count">{{ rows|length }}개의 메모</span>
+        </div>
     </div>
     <div class="footer">
-        <center>
-            <span id="memo-count">{{ rows|length }}개의 메모</span>
-        </center>
         <div class="write" onclick="OpenWriteModal()" data-tooltip="메모 작성">
             <i class="bi bi-plus-lg"></i>
         </div>
