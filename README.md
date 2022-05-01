@@ -1,6 +1,5 @@
 ![header](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=REMEMO&fontSize=90)
-<<<<<<< HEAD
-=======
+
 <div align="center">
     <img src="https://img.shields.io/badge/Flask-000000?style=flat-square&logo=Flask&logoColor=white"/></a>&nbsp 
     <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=white"/></a>&nbsp 
@@ -9,7 +8,6 @@
     <a href="http://rememo.kro.kr:5001/">REMEMO</a> 바로가기
 </div>
 
->>>>>>> 3f05141 (favicon 추가)
 * * *
 ### 유튜버 [개발하는 정대리](https://www.youtube.com/c/%EA%B0%9C%EB%B0%9C%ED%95%98%EB%8A%94%EC%A0%95%EB%8C%80%EB%A6%AC)님이 주관한  `[제 1회 빡코딩콘]` 참가
 * * *
