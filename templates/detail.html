@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- favicon -->
+    <link rel="icon" href="../static/img/favicon.ico">
+
     <!-- load smooth -->
     <META HTTP-EQUIV="Page-Enter" CONTENT="BlendTrans(Duration=1)"> 
     <META HTTP-EQUIV="Page-exit" CONTENT="BlendTrans(Duration=1)"> 
@@ -31,7 +34,7 @@
     <script src="../static/js/CheckLocked.js"></script>
     <script src="../static/js/Edit.js"></script>
     <script src="../static/js/tooltip.js"></script>
-    <title>메모</title>
+    <title>REMEMO</title>
     <script>
         $(document).ready(function() {
             var theme = localStorage.getItem('theme');
@@ -95,7 +98,7 @@
                 <a aria-label="Close" class="close" onclick="CloseDeleteModal()"></a>
                 <h4>삭제</h4>
             </header>
-            <p style="padding: 0px 200px;">정말 삭제하시겠습니까?</p>
+            <p>정말 삭제하시겠습니까?</p>
             <footer>
                 <a href="#" role="button" class="secondary outline" onclick="CloseDeleteModal()">취소</a>
                 <a href="" id="delete_btn" role="button" style="background-color: #e53935;">삭제</a>
