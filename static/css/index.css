@@ -116,7 +116,7 @@ article.memo header a {
     margin-left: 20px;
 }
 
-article.memo header span#number {
+article.memo span#number {
     display: none;
 }
 

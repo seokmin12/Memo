@@ -85,11 +85,11 @@
         <div class="row">
             {% for row in rows %}
                 <article class="memo" id="{{row['number']}} {{row['locked']}}" onclick="GoDetail(this)">
-                    <header>
+                    <!-- <header> -->
                         <span id="number">
                             {{row["number"]}}
                         </span>
-                    </header>
+                    <!-- </header> -->
                     {% if row["locked"] == 'T' %}
                     <div class="title">
                         <i class="bi bi-lock-fill"></i>비밀메모 입니다.
